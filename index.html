@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Field Layout Plot Randomizer</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <h1>Field Layout Plot Randomizer</h1>
+
+      <div class="layout">
+        <section class="panel">
+          <h2>Inputs</h2>
+
+          <label for="treatmentsInput">Entries (one per line)</label>
+          <textarea
+            id="treatmentsInput"
+            rows="10"
+            placeholder="Example:
+T1,test
+C1,check
+T2,test
+C2,check
+
+You can also write: code test OR code check"
+          ></textarea>
+
+          <div class="row">
+            <div class="field">
+              <label for="replications">Replications</label>
+              <input id="replications" type="number" min="1" step="1" value="3" />
+            </div>
+            <div class="field">
+              <label for="rowsCount">Field rows</label>
+              <input id="rowsCount" type="number" min="1" step="1" value="5" />
+            </div>
+            <div class="field">
+              <label for="colsCount">Field columns</label>
+              <input id="colsCount" type="number" min="1" step="1" value="6" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="orderType">Field order</label>
+              <select id="orderType">
+                <option value="row-col">Row-col order</option>
+                <option value="column-serpentine">Column serpentine</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="startCorner">Start corner</label>
+              <select id="startCorner">
+                <option value="top-left">Top left</option>
+                <option value="top-right">Top right</option>
+                <option value="bottom-left">Bottom left</option>
+                <option value="bottom-right">Bottom right</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="useSeed">Seed (optional)</label>
+              <input id="useSeed" type="text" placeholder="Leave blank for random" />
+              <div class="help">Same seed => same randomized layouts.</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="generateBtn" type="button">Generate layout</button>
+            <button id="downloadBtn" type="button" disabled>Download Excel</button>
+          </div>
+
+          <div id="status" class="status" aria-live="polite"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Visualization</h2>
+
+          <div class="row">
+            <div class="field">
+              <label for="replicationSelect">Show replication</label>
+              <select id="replicationSelect" disabled></select>
+            </div>
+          </div>
+
+          <div class="legend">
+            <span class="swatch sw-test" title="Test entries"></span> Test
+            <span class="swatch sw-check" title="Check entries"></span> Check
+            <span class="swatch sw-blank" title="Unused plots"></span> Blank
+          </div>
+
+          <div id="gridWrap" class="gridWrap" aria-label="Field layout grid"></div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
