@@ -163,16 +163,16 @@ button:disabled {
 }
 
 .cell-test {
-  background: #bbf7d0;
-  color: #064e3b;
+  background: #87B25A;
+  color: #f3f4f6;
 }
 .cell-check {
-  background: #93c5fd;
-  color: #1e3a8a;
+  background: #FFB133;
+  color: #f3f4f6;
 }
 .cell-blank {
-  background: #111827;
-  color: #111827;
+  background: #526E33;
+  color: #f3f4f6;
 }
 
 .axis {
