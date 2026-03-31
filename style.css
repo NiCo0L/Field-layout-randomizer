@@ -132,13 +132,13 @@ button:disabled {
   border: 1px solid rgba(17, 24, 39, 0.2);
 }
 .sw-test {
-  background: #bbf7d0;
+  background: #87B25A;
 }
 .sw-check {
-  background: #93c5fd;
+  background: #FFB133;
 }
 .sw-blank {
-  background: #111827;
+  background: #526E33;
 }
 
 .gridWrap {
